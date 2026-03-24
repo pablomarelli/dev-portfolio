@@ -1,24 +1,2 @@
-.app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
-  gap: 2rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #f1f1f1;
-}
-.scene-container {
-  width: 100%;
-  max-width: 1000px;
-  height: 700px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
+/* App.css - Global app styles */
+/* Most styles are in index.css using Tailwind */
