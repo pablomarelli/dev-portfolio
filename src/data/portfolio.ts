@@ -169,7 +169,7 @@ const sharedProjects: Project[] = [
     url: 'https://github.com/pablomarelli/homelab-infra',
   },
 ]
-ñ
+
 const sharedAwards: Award[] = [
   {
     title: '3rd Prize - Faro de la Cultura International Contest',
