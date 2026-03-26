@@ -182,8 +182,8 @@ const sharedAwards: Award[] = [
     year: '2017',
   },
   {
-    title: 'ARQ Clarin magazine prize',
-    organization: 'Clarin',
+    title: 'ARQ Clarín magazine prize',
+    organization: 'Clarín',
     year: '2016',
   },
   {
