@@ -201,9 +201,11 @@ const englishContent: LocaleContent = {
     location: 'Buenos Aires, Argentina',
     email: 'pablo.marelli.kenny@gmail.com',
     bio: `Backend engineer with 4+ years of experience building scalable APIs and distributed systems.
-Specialized in Python and Django ecosystems, with growing expertise in Go for high-performance services.
-I've worked on middleware APIs for media companies, led backend refactors from legacy systems to modern architectures,
-and deployed cloud-native solutions on AWS. Previously an architect, I bring a unique perspective on system design
+Specialized in Python, Django and FastAPI ecosystems, with growing expertise in Go for high-performance services.
+I've worked designing, developing and maintaining big microservices platforms under Kubernetes infra, with sync and async communication,
+middleware APIs for media companies, backend refactors from legacy systems to modern architectures,
+and deployed cloud-native solutions on AWS.
+Previously an architect, I bring a unique perspective on system design
 and a meticulous approach to building robust, maintainable software.`,
     socialLinks,
     experience: [
