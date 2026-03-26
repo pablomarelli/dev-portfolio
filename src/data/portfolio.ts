@@ -323,8 +323,7 @@ and a meticulous approach to building robust, maintainable software.`,
       factsHeading: 'Quick Facts',
       facts: [
         '4+ years of professional experience',
-        'Based in Buenos Aires, Argentina',
-        'Open to remote opportunities worldwide',
+        'Based near Buenos Aires, Argentina'
       ],
     },
     experience: {
