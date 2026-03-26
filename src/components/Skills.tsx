@@ -1,4 +1,4 @@
-import { portfolioData } from '../data/portfolio'
+import { useLocale } from '../hooks/useLocale'
 
 interface SkillCategoryProps {
   title: string
@@ -38,6 +38,7 @@ function SkillCategory({ title, command, skills }: SkillCategoryProps) {
 }
 
 export function Skills() {
+  const { portfolioData, ui } = useLocale()
   const { skills } = portfolioData
 
   return (
@@ -46,29 +47,29 @@ export function Skills() {
         {/* Section title */}
         <div className="flex items-center gap-4 mb-12">
           <span className="text-primary font-mono text-sm">03.</span>
-          <h2 className="section-title mb-0 text-primary">Skills</h2>
+          <h2 className="section-title mb-0 text-primary">{ui.skills.sectionTitle}</h2>
           <div className="flex-1 h-px bg-border" />
         </div>
 
         {/* Skills grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <SkillCategory 
-            title="languages"
+            title={ui.skills.categories.languages}
             command="ls ~/skills/languages"
             skills={skills.languages}
           />
           <SkillCategory 
-            title="frameworks"
+            title={ui.skills.categories.frameworks}
             command="ls ~/skills/frameworks"
             skills={skills.frameworks}
           />
           <SkillCategory 
-            title="tools"
+            title={ui.skills.categories.tools}
             command="ls ~/skills/tools"
             skills={skills.tools}
           />
           <SkillCategory 
-            title="methodologies"
+            title={ui.skills.categories.methodologies}
             command="ls ~/skills/methodologies"
             skills={skills.methodologies}
           />
@@ -76,8 +77,7 @@ export function Skills() {
 
         {/* Proficiency note */}
         <div className="mt-8 p-4 bg-card/50 border border-border rounded-lg font-mono text-xs text-muted-foreground">
-          <span className="text-primary">Note:</span> Primary expertise in Python ecosystem (Django, DRF, FastAPI) 
-          with growing proficiency in Go for high-performance services.
+          <span className="text-primary">{ui.skills.noteLabel}</span> {ui.skills.noteText}
         </div>
       </div>
     </section>

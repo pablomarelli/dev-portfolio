@@ -1,7 +1,7 @@
 import { ExternalLink, Folder, GitBranch } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button'
-import { portfolioData } from '../data/portfolio'
+import { useLocale } from '../hooks/useLocale'
 
 // Language color mapping (GitHub-style)
 const languageColors: Record<string, string> = {
@@ -15,13 +15,15 @@ const languageColors: Record<string, string> = {
 }
 
 export function Projects() {
+  const { portfolioData, ui } = useLocale()
+
   return (
     <section id="projects" className="section bg-muted/30">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section title */}
         <div className="flex items-center gap-4 mb-12">
           <span className="text-primary font-mono text-sm">04.</span>
-          <h2 className="section-title mb-0 text-primary">Projects</h2>
+          <h2 className="section-title mb-0 text-primary">{ui.projects.sectionTitle}</h2>
           <div className="flex-1 h-px bg-border" />
         </div>
 
@@ -40,7 +42,7 @@ export function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
-                    aria-label={`View ${project.name} on GitHub`}
+                    aria-label={ui.projects.viewOnGitHub(project.name)}
                   >
                     <GitBranch className="w-5 h-5" />
                   </a>
@@ -74,7 +76,7 @@ export function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      View Code
+                      {ui.projects.viewCode}
                       <ExternalLink className="w-3 h-3 ml-1" />
                     </a>
                   </Button>
@@ -97,7 +99,7 @@ export function Projects() {
               rel="noopener noreferrer"
             >
               <span className="text-primary mr-2">$</span>
-              View all repositories
+              {ui.projects.viewAllRepositories}
               <ExternalLink className="w-4 h-4 ml-2" />
             </a>
           </Button>

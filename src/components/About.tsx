@@ -1,13 +1,15 @@
-import { portfolioData } from '../data/portfolio'
+import { useLocale } from '../hooks/useLocale'
 
 export function About() {
+  const { portfolioData, ui } = useLocale()
+
   return (
     <section id="about" className="section">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section title */}
         <div className="flex items-center gap-4 mb-8">
           <span className="text-primary font-mono text-sm">01.</span>
-          <h2 className="section-title mb-0 text-primary">About</h2>
+          <h2 className="section-title mb-0 text-primary">{ui.about.sectionTitle}</h2>
           <div className="flex-1 h-px bg-border" />
         </div>
 
@@ -24,7 +26,7 @@ export function About() {
           {/* Content */}
           <div className="p-6 font-mono text-sm leading-relaxed">
             <div className="text-muted-foreground mb-4">
-              <span className="text-primary">##</span> About Me
+              <span className="text-primary">##</span> {ui.about.heading}
             </div>
             
             {portfolioData.bio.split('\n').map((paragraph, index) => (
@@ -35,18 +37,14 @@ export function About() {
 
             <div className="mt-6 pt-4 border-t border-border">
               <div className="text-muted-foreground mb-2">
-                <span className="text-primary">###</span> Quick Facts
+                <span className="text-primary">###</span> {ui.about.factsHeading}
               </div>
               <ul className="space-y-1 text-foreground/80">
-                <li>
-                  <span className="text-primary">-</span> {portfolioData.experience.length}+ years of professional experience
-                </li>
-                <li>
-                  <span className="text-primary">-</span> Based in {portfolioData.location}
-                </li>
-                <li>
-                  <span className="text-primary">-</span> Open to remote opportunities worldwide
-                </li>
+                {ui.about.facts.map((fact) => (
+                  <li key={fact}>
+                    <span className="text-primary">-</span> {fact}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

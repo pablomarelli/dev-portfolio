@@ -1,14 +1,17 @@
+import type { ElementType } from 'react'
 import { Github, Linkedin, Mail, Terminal } from 'lucide-react'
 import { Button } from './ui/button'
-import { portfolioData } from '../data/portfolio'
+import { useLocale } from '../hooks/useLocale'
 
-const socialIcons: Record<string, React.ElementType> = {
+const socialIcons: Record<string, ElementType> = {
   github: Github,
   linkedin: Linkedin,
   mail: Mail,
 }
 
 export function Contact() {
+  const { portfolioData, ui } = useLocale()
+
   return (
     <section id="contact" className="section">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -16,7 +19,7 @@ export function Contact() {
         <div className="flex items-center justify-center gap-4 mb-12">
           <div className="flex-1 h-px bg-border max-w-24" />
           <span className="text-primary font-mono text-sm">06.</span>
-          <h2 className="section-title mb-0 text-primary">Get In Touch</h2>
+          <h2 className="section-title mb-0 text-primary">{ui.contact.sectionTitle}</h2>
           <div className="flex-1 h-px bg-border max-w-24" />
         </div>
 
@@ -27,7 +30,7 @@ export function Contact() {
               <span className="text-primary">$</span> cat contact.txt
             </div>
             <div className="text-foreground/90 leading-relaxed max-w-md">
-              Whether you have a question or just want to say hi, feel free to reach out!
+              {ui.contact.message}
             </div>
           </div>
         </div>
@@ -41,7 +44,7 @@ export function Contact() {
           >
             <a href={`mailto:${portfolioData.email}`}>
               <Mail className="w-4 h-4 mr-2" />
-              Say Hello
+              {ui.contact.sayHello}
             </a>
           </Button>
         </div>
@@ -70,13 +73,15 @@ export function Contact() {
 }
 
 export function Footer() {
+  const { portfolioData, ui } = useLocale()
+
   return (
     <footer className="py-8 border-t border-border">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-mono text-muted-foreground">
           <div className="flex items-center gap-2">
             <Terminal className="w-4 h-4 text-primary" />
-            <span>Built with React, TypeScript & Tailwind</span>
+            <span>{ui.footer.builtWith}</span>
           </div>
           <div>
             <span className="text-primary">&copy;</span> {new Date().getFullYear()} {portfolioData.name}
