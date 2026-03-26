@@ -1,16 +1,18 @@
 import { Briefcase, ExternalLink } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Badge } from './ui/badge'
-import { portfolioData } from '../data/portfolio'
+import { useLocale } from '../hooks/useLocale'
 
 export function Experience() {
+  const { portfolioData, ui } = useLocale()
+
   return (
     <section id="experience" className="section bg-muted/30">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section title */}
         <div className="flex items-center gap-4 mb-12">
           <span className="text-primary font-mono text-sm">02.</span>
-          <h2 className="section-title mb-0 text-primary">Experience</h2>
+          <h2 className="section-title mb-0 text-primary">{ui.experience.sectionTitle}</h2>
           <div className="flex-1 h-px bg-border" />
         </div>
 
@@ -54,7 +56,7 @@ export function Experience() {
                         {/* Role progression */}
                         {job.roles && job.roles.length > 0 && (
                           <div className="mt-3 space-y-1">
-                            <div className="text-xs font-mono text-muted-foreground mb-1">Roles:</div>
+                            <div className="text-xs font-mono text-muted-foreground mb-1">{ui.experience.rolesLabel}</div>
                             {job.roles.map((role, roleIndex) => (
                               <div key={roleIndex} className="flex items-start gap-2 text-xs font-mono">
                                 <span className="text-primary mt-0.5">

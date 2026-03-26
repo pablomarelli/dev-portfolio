@@ -1,17 +1,19 @@
 import { Moon, Sun, Terminal } from 'lucide-react'
 import { Button } from './ui/button'
 import { useTheme } from '../hooks/useTheme'
-
-const navItems = [
-  { name: 'About', href: '#about' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
-]
+import { useLocale } from '../hooks/useLocale'
 
 export function Header() {
   const { theme, toggleTheme } = useTheme()
+  const { locale, setLocale, ui } = useLocale()
+
+  const navItems = [
+    { name: ui.nav.about, href: '#about' },
+    { name: ui.nav.experience, href: '#experience' },
+    { name: ui.nav.skills, href: '#skills' },
+    { name: ui.nav.projects, href: '#projects' },
+    { name: ui.nav.contact, href: '#contact' },
+  ]
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -40,17 +42,43 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Theme Toggle */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="relative"
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-          >
-            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          </Button>
+          <div className="flex items-center gap-2">
+            <div
+              className="flex items-center rounded-md border border-border bg-card/80 p-1"
+              role="group"
+              aria-label={ui.header.switchLocale}
+            >
+              <Button
+                variant={locale === 'en' ? 'secondary' : 'ghost'}
+                size="sm"
+                className="h-8 px-2 font-mono text-xs"
+                onClick={() => setLocale('en')}
+                aria-pressed={locale === 'en'}
+              >
+                EN
+              </Button>
+              <Button
+                variant={locale === 'es' ? 'secondary' : 'ghost'}
+                size="sm"
+                className="h-8 px-2 font-mono text-xs"
+                onClick={() => setLocale('es')}
+                aria-pressed={locale === 'es'}
+              >
+                ES
+              </Button>
+            </div>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="relative"
+              aria-label={ui.header.switchTheme(theme === 'dark' ? 'light' : 'dark')}
+            >
+              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            </Button>
+          </div>
         </div>
       </div>
     </header>

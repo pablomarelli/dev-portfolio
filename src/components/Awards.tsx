@@ -1,7 +1,9 @@
 import { Award } from 'lucide-react'
-import { portfolioData } from '../data/portfolio'
+import { useLocale } from '../hooks/useLocale'
 
 export function Awards() {
+  const { portfolioData, ui } = useLocale()
+
   return (
     <section id="awards" className="py-12 bg-muted/30">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,7 +11,7 @@ export function Awards() {
         <div className="flex items-center gap-3 mb-6">
           <Award className="w-4 h-4 text-muted-foreground" />
           <h3 className="text-sm font-mono text-muted-foreground uppercase tracking-wider">
-            Architecture Awards
+            {ui.awards.sectionTitle}
           </h3>
           <div className="flex-1 h-px bg-border" />
         </div>
@@ -30,8 +32,7 @@ export function Awards() {
 
         {/* Context note */}
         <p className="mt-4 text-xs text-muted-foreground font-mono">
-          <span className="text-primary">*</span> From my previous career as an architect - 
-          a background that shapes my approach to system design and problem-solving.
+          <span className="text-primary">*</span> {ui.awards.contextNote}
         </p>
       </div>
     </section>

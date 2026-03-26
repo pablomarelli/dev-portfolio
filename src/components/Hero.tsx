@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
-import { portfolioData } from '../data/portfolio'
+import { useLocale } from '../hooks/useLocale'
 
 export function Hero() {
+  const { portfolioData, ui } = useLocale()
   const [displayText, setDisplayText] = useState('')
   const [showCursor, setShowCursor] = useState(true)
   const fullText = portfolioData.title
@@ -58,14 +59,14 @@ export function Hero() {
 
         {/* Location */}
         <p className="text-muted-foreground font-mono text-sm mb-8">
-          <span className="text-primary">location:</span> {portfolioData.location}
+          <span className="text-primary">{ui.hero.locationLabel}</span> {portfolioData.location}
         </p>
 
         {/* Terminal-style prompt */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border font-mono text-sm">
           <span className="text-muted-foreground">~/portfolio</span>
           <span className="text-primary">$</span>
-          <span className="text-foreground">cat about.md</span>
+          <span className="text-foreground">{ui.hero.promptCommand}</span>
           <span className={`w-2 h-4 bg-primary ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
         </div>
       </div>
@@ -74,9 +75,9 @@ export function Hero() {
       <a 
         href="#about"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-        aria-label="Scroll to about section"
+        aria-label={ui.hero.scrollAriaLabel}
       >
-        <span className="text-xs font-mono">scroll</span>
+        <span className="text-xs font-mono">{ui.hero.scrollLabel}</span>
         <ChevronDown className="w-5 h-5 animate-bounce" />
       </a>
     </section>
