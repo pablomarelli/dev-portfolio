@@ -169,7 +169,7 @@ const sharedProjects: Project[] = [
     url: 'https://github.com/pablomarelli/homelab-infra',
   },
 ]
-
+ñ
 const sharedAwards: Award[] = [
   {
     title: '3rd Prize - Faro de la Cultura International Contest',
@@ -180,6 +180,11 @@ const sharedAwards: Award[] = [
     title: 'Honorable Prize - inHAUS Vivienda Modular',
     organization: 'inHAUS',
     year: '2017',
+  },
+  {
+    title: 'ARQ Clarin magazine prize',
+    organization: 'Clarin',
+    year: '2016',
   },
   {
     title: 'Arquisur 2016 Premio Aroztegui',
@@ -365,11 +370,12 @@ const spanishContent: LocaleContent = {
     title: 'Ingeniero Backend en Python/Go',
     location: 'Buenos Aires, Argentina',
     email: 'pablo.marelli.kenny@gmail.com',
-    bio: `Ingeniero backend con mas de 4 anos de experiencia construyendo APIs escalables y sistemas distribuidos.
-Especializado en el ecosistema de Python y Django, con experiencia en crecimiento en Go para servicios de alto rendimiento.
-Trabaje en APIs middleware para empresas de medios, lidere refactors backend desde sistemas legacy hacia arquitecturas modernas,
-y desplegue soluciones cloud-native sobre AWS. Antes fui arquitecto, lo que me da una mirada distinta sobre el diseno de sistemas
-y una forma meticulosa de construir software robusto y mantenible.`,
+    bio: `Ingeniero backend con mas de 4 años de experiencia construyendo APIs escalables y sistemas distribuidos.
+Especializado en el ecosistema de Python, Django y FastAPI, con creciente experiencia en Go para crear servicios de alto rendimiento.
+Trabaje diseñando, desarrollando y manteniendo grandes plataformas con microservicios bajo Kubernetes media comunicacion sincrona y asyncrona, 
+APIs middleware con dashboard para empresas de medios, refactors backend desde sistemas legacy hacia arquitecturas modernas,
+y desplegue soluciones cloud-native sobre AWS. Antes fui arquitecto, diseñando, desarrollando y construyendo proyectos que pude trasladar a el diseño de sistemas,
+con una forma meticulosa de construir software robusto y mantenible.`,
     socialLinks,
     experience: [
       {
