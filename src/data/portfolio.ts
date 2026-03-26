@@ -507,7 +507,6 @@ con una forma meticulosa de construir software robusto y mantenible.`,
       facts: [
         'Mas de 4 anos de experiencia profesional',
         'Vivo en Buenos Aires, Argentina',
-        'Disponible para oportunidades remotas en todo el mundo',
       ],
     },
     experience: {
