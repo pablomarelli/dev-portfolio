@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, ExternalLink, GitBranch, Server } from 'lucide-react'
 import { useLocale } from '../hooks/useLocale'
+import { Button } from './ui/button'
 
 export function Hero() {
   const { portfolioData, ui } = useLocale()
@@ -61,6 +62,28 @@ export function Hero() {
         <p className="text-muted-foreground font-mono text-sm mb-8">
           <span className="text-primary">{ui.hero.locationLabel}</span> {portfolioData.location}
         </p>
+
+        <div className="mb-8 flex flex-col items-center gap-4">
+          <div className="inline-flex max-w-xl items-center gap-3 rounded-lg border border-primary/30 bg-primary/10 px-4 py-3 text-left font-mono text-sm text-foreground shadow-[0_0_30px_rgba(34,197,94,0.12)]">
+            <Server className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-primary">{ui.hero.homelabLabel}</p>
+              <p className="mt-1 text-muted-foreground">{ui.hero.homelabText}</p>
+            </div>
+          </div>
+
+          <Button asChild variant="outline" className="font-mono">
+            <a
+              href={portfolioData.sourceRepository}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitBranch className="h-4 w-4" aria-hidden="true" />
+              {ui.hero.repoCta}
+              <ExternalLink className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </Button>
+        </div>
 
         {/* Terminal-style prompt */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border font-mono text-sm">

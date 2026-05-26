@@ -50,6 +50,7 @@ export interface PortfolioData {
   location: string
   email: string
   bio: string
+  sourceRepository: string
   socialLinks: SocialLink[]
   experience: Experience[]
   skills: {
@@ -57,6 +58,7 @@ export interface PortfolioData {
     frameworks: string[]
     tools: string[]
     methodologies: string[]
+    aiHarness: string[]
   }
   projects: Project[]
   education: Education[]
@@ -77,6 +79,9 @@ export interface UICopy {
   }
   hero: {
     locationLabel: string
+    homelabLabel: string
+    homelabText: string
+    repoCta: string
     promptCommand: string
     scrollLabel: string
     scrollAriaLabel: string
@@ -98,6 +103,7 @@ export interface UICopy {
       frameworks: string
       tools: string
       methodologies: string
+      aiHarness: string
     }
     noteLabel: string
     noteText: string
@@ -148,11 +154,14 @@ const socialLinks: SocialLink[] = [
   },
 ]
 
+const sourceRepository = 'https://github.com/pablomarelli/dev-portfolio'
+
 const sharedSkills = {
-  languages: ['Python', 'Go', 'SQL', 'JavaScript', 'TypeScript', 'HTML', 'CSS'],
-  frameworks: ['Django', 'Django REST Framework', 'FastAPI'],
-  tools: ['Docker', 'AWS', 'Git', 'GitHub Actions', 'Linux', 'Terraform', 'PostgreSQL', 'Redis'],
-  methodologies: ['Agile', 'Scrum', 'CI/CD', 'TDD', 'REST API Design'],
+  languages: ['Python', 'Go', 'TypeScript', 'JavaScript', 'SQL', 'HTML', 'CSS'],
+  frameworks: ['FastAPI', 'Django', 'Django REST Framework', 'Typer'],
+  tools: ['Docker', 'Kubernetes', 'Argo CD', 'AWS', 'Git', 'GitHub Actions', 'Linux', 'Terraform', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka', 'NATS', 'Twilio', 'Sentry', 'Prometheus', 'Avro'],
+  methodologies: ['Distributed Systems', 'Event-driven Architecture', 'Microservices', 'REST API Design', 'Marketplace Systems', 'Observability', 'CI/CD', 'TDD', 'Agile', 'Scrum'],
+  aiHarness: ['OpenCode - main AI agent', 'Gentle AI - SDD framework', 'Custom skills for elegant and robust coding practices', 'Hermes - assistant'],
 }
 
 const sharedProjects: Project[] = [
@@ -207,6 +216,7 @@ middleware APIs for media companies, backend refactors from legacy systems to mo
 and deployed cloud-native solutions on AWS.
 Previously an architect, I bring a unique perspective on system design
 and a meticulous approach to building robust, maintainable software.`,
+    sourceRepository,
     socialLinks,
     experience: [
       {
@@ -313,6 +323,9 @@ and a meticulous approach to building robust, maintainable software.`,
     },
     hero: {
       locationLabel: 'location:',
+      homelabLabel: 'live from homelab',
+      homelabText: 'This portfolio is self-hosted on my kubernetes (k3s) homelab infrastructure.',
+      repoCta: 'Check homelab source repo',
       promptCommand: 'cat about.md',
       scrollLabel: 'scroll',
       scrollAriaLabel: 'Scroll to about section',
@@ -337,6 +350,7 @@ and a meticulous approach to building robust, maintainable software.`,
         frameworks: 'frameworks',
         tools: 'tools',
         methodologies: 'methodologies',
+        aiHarness: 'ai harness',
       },
       noteLabel: 'Note:',
       noteText: 'Primary expertise in Python ecosystem (Django, DRF, FastAPI) with growing proficiency in Go for high-performance services.',
@@ -377,6 +391,7 @@ Trabaje diseñando, desarrollando y manteniendo grandes plataformas con microser
 APIs middleware con dashboard para empresas de medios, refactors backend desde sistemas legacy hacia arquitecturas modernas,
 y desplegue soluciones cloud-native sobre AWS. Antes fui arquitecto, diseñando, desarrollando y construyendo proyectos que pude trasladar a el diseño de sistemas,
 con una forma meticulosa de construir software robusto y mantenible.`,
+    sourceRepository,
     socialLinks,
     experience: [
       {
@@ -496,6 +511,9 @@ con una forma meticulosa de construir software robusto y mantenible.`,
     },
     hero: {
       locationLabel: 'ubicacion:',
+      homelabLabel: 'corriendo desde mi homelab',
+      homelabText: 'Este portfolio esta hosteado en mi kuberentes (k3s) homelab.',
+      repoCta: 'Repo del homelab',
       promptCommand: 'cat sobre-mi.md',
       scrollLabel: 'bajar',
       scrollAriaLabel: 'Ir a la seccion sobre mi',
@@ -505,7 +523,7 @@ con una forma meticulosa de construir software robusto y mantenible.`,
       heading: 'Sobre Mi',
       factsHeading: 'Datos Rapidos',
       facts: [
-        'Mas de 4 anos de experiencia profesional',
+        'Mas de 4 años de experiencia profesional',
         'Vivo en Buenos Aires, Argentina',
       ],
     },
@@ -520,6 +538,7 @@ con una forma meticulosa de construir software robusto y mantenible.`,
         frameworks: 'frameworks',
         tools: 'herramientas',
         methodologies: 'metodologias',
+        aiHarness: 'harness de IA',
       },
       noteLabel: 'Nota:',
       noteText: 'Experiencia principal en el ecosistema Python (Django, DRF, FastAPI), con dominio creciente de Go para servicios de alto rendimiento.',

@@ -73,6 +73,11 @@ export function Skills() {
             command="ls ~/skills/methodologies"
             skills={skills.methodologies}
           />
+          <SkillCategory 
+            title={ui.skills.categories.aiHarness}
+            command="ls ~/skills/ai-harness"
+            skills={skills.aiHarness}
+          />
         </div>
 
         {/* Proficiency note */}
