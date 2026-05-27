@@ -1,5 +1,5 @@
 import { Award } from 'lucide-react'
-import { useLocale } from '../hooks/useLocale'
+import { useLocale } from '../hooks/useLocale.ts'
 
 export function Awards() {
   const { portfolioData, ui } = useLocale()

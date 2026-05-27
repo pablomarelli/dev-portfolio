@@ -1,7 +1,7 @@
 import { Moon, Sun, Terminal } from 'lucide-react'
 import { Button } from './ui/button'
 import { useTheme } from '../hooks/useTheme'
-import { useLocale } from '../hooks/useLocale'
+import { useLocale } from '../hooks/useLocale.ts'
 
 export function Header() {
   const { theme, toggleTheme } = useTheme()

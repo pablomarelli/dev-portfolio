@@ -1,7 +1,7 @@
 import type { ElementType } from 'react'
 import { Github, Linkedin, Mail, Terminal } from 'lucide-react'
 import { Button } from './ui/button'
-import { useLocale } from '../hooks/useLocale'
+import { useLocale } from '../hooks/useLocale.ts'
 
 const socialIcons: Record<string, ElementType> = {
   github: Github,

@@ -1,7 +1,7 @@
 import { Briefcase, ExternalLink } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Badge } from './ui/badge'
-import { useLocale } from '../hooks/useLocale'
+import { useLocale } from '../hooks/useLocale.ts'
 
 export function Experience() {
   const { portfolioData, ui } = useLocale()

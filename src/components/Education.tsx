@@ -1,6 +1,6 @@
 import { GraduationCap } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
-import { useLocale } from '../hooks/useLocale'
+import { useLocale } from '../hooks/useLocale.ts'
 
 export function Education() {
   const { portfolioData, ui } = useLocale()

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ChevronDown, ExternalLink, GitBranch, Server } from 'lucide-react'
-import { useLocale } from '../hooks/useLocale'
+import { useLocale } from '../hooks/useLocale.ts'
 import { Button } from './ui/button'
 
 export function Hero() {

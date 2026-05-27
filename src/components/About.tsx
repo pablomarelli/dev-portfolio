@@ -1,4 +1,4 @@
-import { useLocale } from '../hooks/useLocale'
+import { useLocale } from '../hooks/useLocale.ts'
 
 export function About() {
   const { portfolioData, ui } = useLocale()

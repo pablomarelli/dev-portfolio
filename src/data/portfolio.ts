@@ -55,9 +55,12 @@ export interface PortfolioData {
   experience: Experience[]
   skills: {
     languages: string[]
-    frameworks: string[]
-    tools: string[]
-    methodologies: string[]
+    backendApis: string[]
+    infrastructureDelivery: string[]
+    databasesMessaging: string[]
+    observabilityReliability: string[]
+    systemsArchitecture: string[]
+    domainIntegrations: string[]
     aiHarness: string[]
   }
   projects: Project[]
@@ -100,9 +103,12 @@ export interface UICopy {
     sectionTitle: string
     categories: {
       languages: string
-      frameworks: string
-      tools: string
-      methodologies: string
+      backendApis: string
+      infrastructureDelivery: string
+      databasesMessaging: string
+      observabilityReliability: string
+      systemsArchitecture: string
+      domainIntegrations: string
       aiHarness: string
     }
     noteLabel: string
@@ -158,9 +164,12 @@ const sourceRepository = 'https://github.com/pablomarelli/dev-portfolio'
 
 const sharedSkills = {
   languages: ['Python', 'Go', 'TypeScript', 'JavaScript', 'SQL', 'HTML', 'CSS'],
-  frameworks: ['FastAPI', 'Django', 'Django REST Framework', 'Typer'],
-  tools: ['Docker', 'Kubernetes', 'Argo CD', 'AWS', 'Git', 'GitHub Actions', 'Linux', 'Terraform', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka', 'NATS', 'Twilio', 'Sentry', 'Prometheus', 'Avro'],
-  methodologies: ['Distributed Systems', 'Event-driven Architecture', 'Microservices', 'REST API Design', 'Marketplace Systems', 'Observability', 'CI/CD', 'TDD', 'Agile', 'Scrum'],
+  backendApis: ['FastAPI', 'Django', 'Django REST Framework', 'REST API Design', 'OpenAPI', 'Ping/Post APIs', 'Typer'],
+  infrastructureDelivery: ['Docker', 'Kubernetes', 'Argo CD', 'AWS', 'Terraform', 'GitHub Actions', 'Linux', 'Heroku', 'Git', 'CI/CD'],
+  databasesMessaging: ['PostgreSQL', 'MongoDB', 'Redis', 'Kafka', 'NATS', 'Avro', 'Event Streaming', 'Caching'],
+  observabilityReliability: ['Sentry', 'Prometheus', 'Observability', 'Performance Testing', 'Scaling', 'Cap Tracking'],
+  systemsArchitecture: ['Distributed Systems', 'Event-driven Architecture', 'Microservices', 'Marketplace Systems', 'Plugin Architecture', 'Concurrency Controls', 'TDD', 'Agile', 'Scrum'],
+  domainIntegrations: ['Twilio', 'IVR', 'TCPA Compliance', 'Buyer Integrations', 'Campaign Management', 'Geo-targeting'],
   aiHarness: ['OpenCode - main AI agent', 'Gentle AI - SDD framework', 'Custom skills for elegant and robust coding practices', 'Hermes - assistant'],
 }
 
@@ -207,7 +216,7 @@ const englishContent: LocaleContent = {
   portfolio: {
     name: 'Pablo Marelli',
     title: 'Python/Go Backend Engineer',
-    location: 'Buenos Aires, Argentina',
+    location: '9 de Julio, Buenos Aires, Argentina',
     email: 'pablo.marelli.kenny@gmail.com',
     bio: `Backend engineer with 4+ years of experience building scalable APIs and distributed systems.
 Specialized in Python, Django and FastAPI ecosystems, with growing expertise in Go for high-performance services.
@@ -240,7 +249,7 @@ and a meticulous approach to building robust, maintainable software.`,
           'Own CI/CD pipelines via GitHub Actions and Argo CD, containerized deployments on Kubernetes, and observability tooling with Sentry and Prometheus',
           'Create CLI tooling (Typer) for operations - campaign management, integration testing, cap resets, data exports, and automated record synchronization',
         ],
-        techStack: ['Python', 'FastAPI', 'Typescript', 'Javascript', 'Golang', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka', 'NATS', 'Twilio', 'Kubernetes', 'Argo CD', 'Docker', 'AWS', 'GitHub Actions', 'Sentry', 'Prometheus'],
+        techStack: ['Python', 'FastAPI', 'TypeScript', 'JavaScript', 'Go', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka', 'NATS', 'Twilio', 'Kubernetes', 'Argo CD', 'Docker', 'AWS', 'GitHub Actions', 'Sentry', 'Prometheus'],
         companyUrl: 'https://whatifmediagroup.com',
       },
       {
@@ -282,7 +291,7 @@ and a meticulous approach to building robust, maintainable software.`,
           'Created technical documentation and automated API docs with OpenAPI',
           'Implemented comprehensive unit testing and scaling improvements',
         ],
-        techStack: ['Python', 'Django', 'DRF', 'SQL', 'Docker', 'Linux', 'Git'],
+        techStack: ['Python', 'Django', 'Django REST Framework', 'SQL', 'Docker', 'Linux', 'Git'],
       },
       {
         company: 'Freelance',
@@ -347,13 +356,16 @@ and a meticulous approach to building robust, maintainable software.`,
       sectionTitle: 'Skills',
       categories: {
         languages: 'languages',
-        frameworks: 'frameworks',
-        tools: 'tools',
-        methodologies: 'methodologies',
+        backendApis: 'backend & APIs',
+        infrastructureDelivery: 'infrastructure & delivery',
+        databasesMessaging: 'databases & messaging',
+        observabilityReliability: 'observability & reliability',
+        systemsArchitecture: 'systems & architecture',
+        domainIntegrations: 'domain & integrations',
         aiHarness: 'ai harness',
       },
       noteLabel: 'Note:',
-      noteText: 'Primary expertise in Python ecosystem (Django, DRF, FastAPI) with growing proficiency in Go for high-performance services.',
+      noteText: 'Primary expertise in Python ecosystem (Django, Django REST Framework, FastAPI) with growing proficiency in Go for high-performance services.',
     },
     projects: {
       sectionTitle: 'Projects',
@@ -383,7 +395,7 @@ const spanishContent: LocaleContent = {
   portfolio: {
     name: 'Pablo Marelli',
     title: 'Ingeniero Backend en Python/Go',
-    location: 'Buenos Aires, Argentina',
+    location: '9 de Julio, Buenos Aires, Argentina',
     email: 'pablo.marelli.kenny@gmail.com',
     bio: `Ingeniero backend con más de 4 años de experiencia construyendo APIs escalables y sistemas distribuidos.
 Especializado en el ecosistema de Python, Django y FastAPI, con creciente experiencia en Go para crear servicios de alto rendimiento.
@@ -415,7 +427,7 @@ con una forma meticulosa de construir software robusto y mantenible.`,
           'Lidero pipelines de CI/CD con GitHub Actions y Argo CD, despliegues containerizados en Kubernetes y observabilidad con Sentry y Prometheus',
           'Creo tooling CLI con Typer para operaciones: gestión de campañas, testing de integraciones, resets de caps, exportaciones y sincronización automatizada de registros',
         ],
-        techStack: ['Python', 'FastAPI', 'Typescript', 'Javascript', 'Golang', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka', 'NATS', 'Twilio', 'Kubernetes', 'Argo CD', 'Docker', 'AWS', 'GitHub Actions', 'Sentry', 'Prometheus'],
+        techStack: ['Python', 'FastAPI', 'TypeScript', 'JavaScript', 'Go', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka', 'NATS', 'Twilio', 'Kubernetes', 'Argo CD', 'Docker', 'AWS', 'GitHub Actions', 'Sentry', 'Prometheus'],
         companyUrl: 'https://whatifmediagroup.com',
       },
       {
@@ -457,7 +469,7 @@ con una forma meticulosa de construir software robusto y mantenible.`,
           'Creé documentación técnica y documentación automática de APIs con OpenAPI',
           'Implementé testing unitario integral y mejoras de escalabilidad',
         ],
-        techStack: ['Python', 'Django', 'DRF', 'SQL', 'Docker', 'Linux', 'Git'],
+        techStack: ['Python', 'Django', 'Django REST Framework', 'SQL', 'Docker', 'Linux', 'Git'],
       },
       {
         company: 'Freelance',
@@ -535,13 +547,16 @@ con una forma meticulosa de construir software robusto y mantenible.`,
       sectionTitle: 'Skills',
       categories: {
         languages: 'lenguajes',
-        frameworks: 'frameworks',
-        tools: 'herramientas',
-        methodologies: 'metodologías',
+        backendApis: 'backend y APIs',
+        infrastructureDelivery: 'infraestructura y delivery',
+        databasesMessaging: 'bases de datos y mensajería',
+        observabilityReliability: 'observabilidad y confiabilidad',
+        systemsArchitecture: 'sistemas y arquitectura',
+        domainIntegrations: 'dominio e integraciones',
         aiHarness: 'harness de IA',
       },
       noteLabel: 'Nota:',
-      noteText: 'Experiencia principal en el ecosistema Python (Django, DRF, FastAPI), con dominio creciente de Go para servicios de alto rendimiento.',
+      noteText: 'Experiencia principal en el ecosistema Python (Django, Django REST Framework, FastAPI), con dominio creciente de Go para servicios de alto rendimiento.',
     },
     projects: {
       sectionTitle: 'Proyectos',

@@ -1,7 +1,7 @@
 import { ExternalLink, Folder, GitBranch } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button'
-import { useLocale } from '../hooks/useLocale'
+import { useLocale } from '../hooks/useLocale.ts'
 
 // Language color mapping (GitHub-style)
 const languageColors: Record<string, string> = {

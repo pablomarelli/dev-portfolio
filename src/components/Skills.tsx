@@ -1,4 +1,4 @@
-import { useLocale } from '../hooks/useLocale'
+import { useLocale } from '../hooks/useLocale.ts'
 
 interface SkillCategoryProps {
   title: string
@@ -59,24 +59,39 @@ export function Skills() {
             skills={skills.languages}
           />
           <SkillCategory 
-            title={ui.skills.categories.frameworks}
-            command="ls ~/skills/frameworks"
-            skills={skills.frameworks}
-          />
-          <SkillCategory 
-            title={ui.skills.categories.tools}
-            command="ls ~/skills/tools"
-            skills={skills.tools}
-          />
-          <SkillCategory 
-            title={ui.skills.categories.methodologies}
-            command="ls ~/skills/methodologies"
-            skills={skills.methodologies}
-          />
-          <SkillCategory 
             title={ui.skills.categories.aiHarness}
             command="ls ~/skills/ai-harness"
             skills={skills.aiHarness}
+          />
+          <SkillCategory 
+            title={ui.skills.categories.backendApis}
+            command="ls ~/skills/backend-apis"
+            skills={skills.backendApis}
+          />
+          <SkillCategory 
+            title={ui.skills.categories.infrastructureDelivery}
+            command="ls ~/skills/infra-delivery"
+            skills={skills.infrastructureDelivery}
+          />
+          <SkillCategory 
+            title={ui.skills.categories.databasesMessaging}
+            command="ls ~/skills/databases-messaging"
+            skills={skills.databasesMessaging}
+          />
+          <SkillCategory 
+            title={ui.skills.categories.observabilityReliability}
+            command="ls ~/skills/observability-reliability"
+            skills={skills.observabilityReliability}
+          />
+          <SkillCategory 
+            title={ui.skills.categories.systemsArchitecture}
+            command="ls ~/skills/systems-architecture"
+            skills={skills.systemsArchitecture}
+          />
+          <SkillCategory 
+            title={ui.skills.categories.domainIntegrations}
+            command="ls ~/skills/domain-integrations"
+            skills={skills.domainIntegrations}
           />
         </div>
 
