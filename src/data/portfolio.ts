@@ -160,7 +160,7 @@ const socialLinks: SocialLink[] = [
   },
 ]
 
-const sourceRepository = 'https://github.com/pablomarelli/dev-portfolio'
+const sourceRepository = 'https://github.com/pablomarelli/homelab-infra'
 
 const sharedSkills = {
   languages: ['Python', 'Go', 'TypeScript', 'JavaScript', 'SQL', 'HTML', 'CSS'],
